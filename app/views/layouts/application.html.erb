@@ -2,12 +2,40 @@
 <html>
 <head>
   <title>Anotherblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <script data-require="bootstrap@*" data-semver="3.3.5" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to "Blog", root_path%></li>
+            <li><%= link_to "Articles", articles_path%></li>
+            <li><%=link_to "New article", new_article_path%></li>
+          </ul>
+		
+		 
+		  <!--<%if user_signed_in? then%>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><p class="navbar-text "><%=current_user.username %>  </p></li>  
+			<li><%= link_to " Sign out", destroy_user_session_path, method: :delete %></li>
+			</ul>
+			<%else%> -->
+			<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Sign in", new_user_session_path %></li>
+			</ul>
+		 <!-- <%end%> -->
+		 
+	
+</div>
 
+
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+ <p class="alert"><%= alert %></p>
 <%= yield %>
 
 </body>
